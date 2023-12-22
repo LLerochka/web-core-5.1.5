@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="(max-width:767px)" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="brands">
+        <div class="brands__title">
+            <h1>РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</h1>
+        </div>
+        <div>
+            <div class="brands__logos__hidden swiper">
+                <div class="brands__logos swiper-wrapper">
+                    <div class="swiper-slide"><img src="ic/cat1.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img src="ic/cat2.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img src="ic/cat3.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img src="ic/cat7.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img src="ic/cat5.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img src="ic/cat6.svg" alt="" class="logo"></div>
+                    <div class="swiper-slide"><img class="logo" class="logo-hidden" src="ic/cat7.svg" alt=""></div>
+                    <div class="swiper-slide"><img class="logo" class="logo-hidden" src="ic/cat8.svg" alt=""></div>
+                    <div class="swiper-slide "><img src="ic/cat5.svg" alt="" class="logo">
+                    </div>
+                    <div class="swiper-slide"><img src="ic/cat6.svg" alt="" class="logo">
+                    </div>
+                    <div class="swiper-slide"><img src="ic/cat7.svg" alt="" class="logo">
+                    </div>
+    
+                <div class="swiper-pagination"></div>
+            </div>
+            <div style="width:90%;">
+                <button id="btn_show" class="show-all">
+                    Показать все
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById("btn_show");
+            const showBrands = document.querySelector(".brands__logos__hidden");
+
+            toggleBtn.addEventListener('click', () => {
+                if (showBrands.classList.contains('expanded')) {
+                    showBrands.style.height = '165px';
+                    toggleBtn.textContent = 'Показать все';
+                    toggleBtn.classList.remove('rotate');
+                    showBrands.classList.remove('expanded');
+                } else {
+                    showBrands.style.height = `${showBrands.scrollHeight}px`;
+                    toggleBtn.textContent = 'Скрыть все';
+                    toggleBtn.classList.add('rotate');
+                    showBrands.classList.add('expanded');
+                }
+            });
+        });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script> 
+const swiper = new Swiper('.swiper', {
+    pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+
+  slidesPerView: 1.2,
+});
+</script>
+
+
+
+
+</body>
+
+
+
+        
+
+
+
+
+
+
+</html>
